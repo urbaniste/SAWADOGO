@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+	<link rel="stylesheet" type="text/css" href="style_site.css">
+    <link rel="stylesheet" type="text/css" href="style_bis.css">
+	
+	<!-- laeflet --> 
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+
+	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script> 
+	<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+	<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+	<!-- jQuery - indispensable pour utiliser les fichiers geojson -->
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>	
+
+    <title>SIG & WebMapping</title>
+
+
+</head>
+
+<body>
+
+                <nav class="navbar">
+
+                                <div class="logo">
+
+                                                <h2 style="text-align: center;"><img style="float: left;" src="http://localhost:8080/serge-main/Forma_WebMapping/logo/terre.gif" alt="Terre" /><span>Système d'Information Géographique</span><br> pour la gestion des ressources en <span>Eau</span></h2>
+                                                
+                                </div>
+
+                                <div class="item">
+
+                                                <ul>
+
+                                                                <li><a href="#">Accueil</a></li>
+
+                                                                <li><a href="#work">Cartographie_WebSIG</a></li>
+
+                                                                <li><a href="#about">À propos</a></li>
+
+                                                                <li><a href="#skill">Données</a></li>
+
+                                                </ul>
+
+                                </div>
+
+                </nav>
+
+                <section class="homepage" id="home">
+
+                               <!--image slider start-->
+                                <div class="slider">
+                                  <div class="slides">
+                                    <!--radio buttons start-->
+                                    <input type="radio" name="radio-btn" id="radio1">
+                                    <input type="radio" name="radio-btn" id="radio2">
+                                    <input type="radio" name="radio-btn" id="radio3">
+                                    <input type="radio" name="radio-btn" id="radio4">
+                                    <!--radio buttons end-->
+                                    <!--slide images start-->
+                                    <div class="slide first">
+                                      <img src="http://localhost:8080/serge-main/Forma_WebMapping/accueil/1.jpg" alt="">
+                                    </div>
+                                    <div class="slide">
+                                      <img src="http://localhost:8080/serge-main/Forma_WebMapping/accueil/2.jpg" alt="">
+                                    </div>
+                                    <div class="slide">
+                                      <img src="http://localhost:8080/serge-main/Forma_WebMapping/accueil/3.jpg" alt="">
+                                    </div>
+                                    <div class="slide">
+                                      <img src="http://localhost:8080/serge-main/Forma_WebMapping/accueil/4.jpg" alt="">
+                                    </div>
+                                    <!--slide images end-->
+                                    <!--automatic navigation start-->
+                                    <div class="navigation-auto">
+                                      <div class="auto-btn1"></div>
+                                      <div class="auto-btn2"></div>
+                                      <div class="auto-btn3"></div>
+                                      <div class="auto-btn4"></div>
+                                    </div>
+                                    <!--automatic navigation end-->
+                                  </div>
+                                  <!--manual navigation start-->
+                                  <div class="navigation-manual">
+                                    <label for="radio1" class="manual-btn"></label>
+                                    <label for="radio2" class="manual-btn"></label>
+                                    <label for="radio3" class="manual-btn"></label>
+                                    <label for="radio4" class="manual-btn"></label>
+                                  </div>
+                                  <!--manual navigation end-->
+                                </div>
+                                <!--image slider end-->
+
+                                 <script type="text/javascript">
+                                    var counter = 1;
+                                    setInterval(function(){
+                                      document.getElementById('radio' + counter).checked = true;
+                                      counter++;
+                                      if(counter > 4){
+                                        counter = 1;
+                                      }
+                                    }, 5000);
+                                </script>
+								
+								<div class="pic">
+                                        <img src="http://localhost:8080/serge-main/Forma_WebMapping/logo/UNIV.png">
+                                </div>
+								
+								<div class="pays">
+										<h3>Œuvrer ensemble,<br>pour mieux gérer les <span>ressources en eau</span><br>de notre pays</h3>
+								 </div>
+
+                </section>
+
+                <section class="hp4" id="work">
+
+                        <style type="text/css">
+                              #map{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
+                                height:500px;
+                              }
+                        </style>
+
+                        <div id="map">
+                           
+                             
+                              <!-- Ici s'affichera la carte -->
+                        </div>
+
+                        <script src="map_home.js"></script>
+
+                </section>
+
+                <section  class="hp2" id="about">
+
+                                <div class="pic1">
+
+                                                <img src="http://localhost:8080/serge-main/Forma_WebMapping/logo/envieau.png">
+
+                                </div>
+
+                                <div class="text1">
+
+                                                <h1>La protection et la mise en valeur de l'environnement</h1><br>
+
+                                                <p>Il s’agit de la loi n° 11-03 qui énonce les principes directeurs de protection et de gestion de l'environnement. Elle traite des obligations qui présentent un risque pour l'environnement et des dispositions visant à lutter contre les pollutions et les nuisances. Elle traite également d'instruments de gestion de l'environnement tels que les normes et standards, les études d'impacts et des plans d'urgence.</p>
+
+                                                <center><button>Plus d'information</button></center>
+
+                                </div>
+
+                </section>
+
+                <section class="hp3" id="skill">
+
+                                <div class="text2">
+
+                                                <center><h1><span><u>La qualité de l'eau</u></span></h1></center>
+
+                                </div>
+
+                                <div class="text3">
+
+                                                <h1>Les normes de qualité des eaux</h1><br>
+
+                                                <p>En application des dispositions de la loi n° 10-95 sur l'eau (article 51) et ses textes d'application notamment le décret n° 2-97-787 du 4 février 1997 relatif aux normes de qualité et à l'inventaire du degré de pollution des eaux, plusieurs normes de qualité des eaux ont été préparés fixant les exigences auxquelles un milieu doit satisfaire selon les différents usages. Il s'agit :</p>
+
+                                </div>
+
+                                <div class="skill">
+
+                                                <div class="box">
+
+                                                                <div class="circle">
+
+                                                                                <h1><span>99%</span></h1>
+
+                                                                </div>
+
+                                                                <h2>Eau potable</h2>
+
+                                                </div>
+
+                                                <div class="box">
+
+                                                                <div class="circle">
+
+                                                                                <h1><span>85%</span></h1>
+
+                                                                </div>
+
+                                                                <h2>Eau d'irrigation</h2>
+
+                                                </div>
+
+                                                <div class="box">
+
+                                                                <div class="circle">
+
+                                                                                <h1><span>70%</span></h1>
+
+                                                                </div>
+
+                                                                <h2>Eau de surface</h2>
+
+                                                </div>
+
+                                                                <img src="http://localhost:8080/serge-main/Forma_WebMapping/logo/environnement.png">
+
+                                </div>
+
+                </section>
+
+              
+
+                <footer class="fl">
+
+                                <center><div class="last">
+
+                                                <h3>Otmane <span>BELGAMRA</span></h3><br>
+
+                                                <p>&copy; 2021 All the rights are reserved.</p>
+
+                                </div></center>
+
+                </footer>
+
+<script>
+        // Script pour la fonctionnalité : "allez en haut"
+        var offset = 300,
+            offset_opacity = 1200,
+            scroll_top_duration = 700;
+    </script>
+    
+</body>
+
+</html>
