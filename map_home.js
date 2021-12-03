@@ -1,4 +1,4 @@
-var map = L.map('map').setView([12.378604360053975, -1.5186498726945181], 10);
+var map = L.map('map').setView([12.378604360053975, -1.5186498726945181], 5);
 	
 var OSM = L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png').addTo(map),
      ESRI = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}');
